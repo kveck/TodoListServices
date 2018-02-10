@@ -108,8 +108,9 @@
         /// <response code="201">Returns the newly-created item</response>
         /// <response code="400">If the item is null</response>            
         [ProducesResponseType(typeof(TodoItemDto), 201)]
-        [ProducesResponseType(typeof(TodoItemDto), 400)]
-        [ProducesResponseType(typeof(TodoItemDto), 401)]
+        [ProducesResponseType(typeof(string), 400)]
+        [ProducesResponseType(typeof(string), 401)]
+        [ProducesResponseType(typeof(string), 500)]
         [HttpPost]
         public async Task<IActionResult> AddTodoItem([FromBody]TodoItemDto itemDto)
         {
